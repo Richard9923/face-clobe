@@ -1,0 +1,197 @@
+<!-- public/home.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook - Página Inicial</title>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo">facebook</div>
+    <input type="text" placeholder="Pesquisar no Facebook" class="search-bar">
+    <a href="/" class="logout">Sair</a>
+  </header>
+
+  <!-- Main Content Layout -->
+  <div class="content">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Atalhos</h2>
+      <ul>
+        <li>Feed de Notícias</li>
+        <li>Messenger</li>
+        <li>Watch</li>
+        <li>Marketplace</li>
+      </ul>
+    </aside>
+
+    <!-- Feed Section with Multiple Posts -->
+    <main class="feed">
+      <div class="post-input">
+        <input type="text" placeholder="No que você está pensando?" class="post-text">
+        <button class="post-button">Publicar</button>
+      </div>
+
+      <!-- Post 1 -->
+      <div class="post">
+        <h3>João Silva</h3>
+        <p>Aproveitando um lindo dia na praia! 🌞</p>
+        <img src="/images/beach.jpg" alt="Imagem de João na praia" class="post-image">
+        <small>2 horas atrás</small>
+        <div class="post-actions">
+          <button class="like-button" onclick="likePost(this)">Curtir <span class="like-count">0</span></button>
+          <button class="comment-button" onclick="toggleComments(this)">Comentários</button>
+        </div>
+        <div class="comment-section" style="display: none;">
+          <div class="comment-list"></div>
+          <div class="add-comment">
+            <input type="text" class="comment-input" placeholder="Escreva um comentário...">
+            <button onclick="addComment(this)">Comentar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="post">
+        <h3>Maria Santos</h3>
+        <p>Passando um ótimo tempo com a família hoje ❤️</p>
+        <img src="/images/family-time.jpg" alt="Imagem da família de Maria" class="post-image">
+        <small>5 horas atrás</small>
+        <div class="post-actions">
+          <button class="like-button" onclick="likePost(this)">Curtir <span class="like-count">0</span></button>
+          <button class="comment-button" onclick="toggleComments(this)">Comentários</button>
+        </div>
+        <div class="comment-section" style="display: none;">
+          <div class="comment-list"></div>
+          <div class="add-comment">
+            <input type="text" class="comment-input" placeholder="Escreva um comentário...">
+            <button onclick="addComment(this)">Comentar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="post">
+        <h3>Lucas Pereira</h3>
+        <p>Acabei de terminar um livro fantástico! Altamente recomendado 📚</p>
+        <img src="/images/reading-book.jpg" alt="Imagem do livro de Lucas" class="post-image">
+        <small>1 dia atrás</small>
+        <div class="post-actions">
+          <button class="like-button" onclick="likePost(this)">Curtir <span class="like-count">0</span></button>
+          <button class="comment-button" onclick="toggleComments(this)">Comentários</button>
+        </div>
+        <div class="comment-section" style="display: none;">
+          <div class="comment-list"></div>
+          <div class="add-comment">
+            <input type="text" class="comment-input" placeholder="Escreva um comentário...">
+            <button onclick="addComment(this)">Comentar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 4 -->
+      <div class="post">
+        <h3>Ana Costa</h3>
+        <p>Amei o show ontem à noite 🎶 Mal posso esperar pelo próximo!</p>
+        <img src="/images/concerte-scene.jpg" alt="Imagem do show de Ana" class="post-image">
+        <small>3 dias atrás</small>
+        <div class="post-actions">
+          <button class="like-button" onclick="likePost(this)">Curtir <span class="like-count">0</span></button>
+          <button class="comment-button" onclick="toggleComments(this)">Comentários</button>
+        </div>
+        <div class="comment-section" style="display: none;">
+          <div class="comment-list"></div>
+          <div class="add-comment">
+            <input type="text" class="comment-input" placeholder="Escreva um comentário...">
+            <button onclick="addComment(this)">Comentar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 5 -->
+      <div class="post">
+        <h3>Pedro Lima</h3>
+        <p>Explorando novas receitas 🥘 e curtindo cozinhar como nunca!</p>
+        <img src="/images/cooking-recipe.jpg" alt="Imagem da receita de Pedro" class="post-image">
+        <small>1 semana atrás</small>
+        <div class="post-actions">
+          <button class="like-button" onclick="likePost(this)">Curtir <span class="like-count">0</span></button>
+          <button class="comment-button" onclick="toggleComments(this)">Comentários</button>
+        </div>
+        <div class="comment-section" style="display: none;">
+          <div class="comment-list"></div>
+          <div class="add-comment">
+            <input type="text" class="comment-input" placeholder="Escreva um comentário...">
+            <button onclick="addComment(this)">Comentar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 6 -->
+      <div class="post">
+        <h3>Carla Nunes</h3>
+        <p>Acabei de fazer uma longa caminhada na natureza. Que paz! 🌲</p>
+        <img src="/images/nature-walk.jpg" alt="Imagem da caminhada de Carla" class="post-image">
+        <small>2 semanas atrás</small>
+        <div class="post-actions">
+          <button class="like-button" onclick="likePost(this)">Curtir <span class="like-count">0</span></button>
+          <button class="comment-button" onclick="toggleComments(this)">Comentários</button>
+        </div>
+        <div class="comment-section" style="display: none;">
+          <div class="comment-list"></div>
+          <div class="add-comment">
+            <input type="text" class="comment-input" placeholder="Escreva um comentário...">
+            <button onclick="addComment(this)">Comentar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional posts can follow the same structure... -->
+
+    </main>
+
+    <!-- Friends List -->
+    <aside class="friends">
+      <h2>Contatos</h2>
+      <ul>
+        <li>Amigo 1</li>
+        <li>Amigo 2</li>
+        <li>Amigo 3</li>
+        <li>Amigo 4</li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- JavaScript for Like and Comment Functionality -->
+  <script>
+    // Function to handle likes
+    function likePost(button) {
+      const likeCount = button.querySelector('.like-count');
+      likeCount.textContent = parseInt(likeCount.textContent) + 1;
+    }
+
+    // Function to show/hide the comment section
+    function toggleComments(button) {
+      const commentSection = button.closest('.post').querySelector('.comment-section');
+      commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Function to add a new comment
+    function addComment(button) {
+      const commentInput = button.previousElementSibling;
+      const commentText = commentInput.value.trim();
+      if (commentText) {
+        const commentList = button.closest('.comment-section').querySelector('.comment-list');
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        newComment.textContent = commentText;
+        commentList.appendChild(newComment);
+        commentInput.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
